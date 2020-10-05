@@ -1,25 +1,34 @@
 const defaultTheme = {
-  smallSize: 12,
-  normalSize: 14,
-  headingSize: 16,
-  bingSize: 20,
+  bigSize: 20,
   radius: 5,
   maxWidth: 1000,
+  font: {
+    family: 'monospace',
+    size: {
+      normal: 12,
+      heading: 24,
+      big: 20,
+    },
+  },
 }
 
 export default {
   dark: {
     ...defaultTheme,
-    bgColor: '#222831',
-    sectionColor: '#393e46',
-    hightLightColor: '#00adb5',
-    textColor: '#eeeeee',
+    color: {
+      bg: '#222831',
+      section: '#393e46',
+      hightLight: '#00adb5',
+      text: '#eeeeee',
+    },
   },
   light: {
     ...defaultTheme,
-    bgColor: '#f9f7f7',
-    sectionColor: '#dbe2ef',
-    hightLightColor: '#3f72af',
-    textColor: '#112d4e',
+    color: {
+      bg: '#f9f7f7',
+      section: '#dbe2ef',
+      hightLight: '#3f72af',
+      text: '#112d4e',
+    },
   },
 }

@@ -16,6 +16,8 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: space-between;
   text-align: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
 `
 
 const StyledCopyright = styled.div`
