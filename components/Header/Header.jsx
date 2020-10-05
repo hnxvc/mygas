@@ -5,7 +5,7 @@ function Header() {
   return <StyledHeader>MyGas</StyledHeader>
 }
 
-const StyledHeader = styled.header`
+const StyledHeader = styled.div`
   text-align: center;
   font-weight: bold;
   font-size: 30px;
