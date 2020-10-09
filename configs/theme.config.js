@@ -1,6 +1,8 @@
 const defaultTheme = {
   bigSize: 20,
-  radius: 5,
+  border: {
+    radius: 5,
+  },
   maxWidth: 1000,
   font: {
     family: 'monospace',
