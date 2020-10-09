@@ -10,6 +10,7 @@ const defaultTheme = {
       normal: 12,
       heading: 24,
       big: 20,
+      super: 30, 
     },
   },
 }
