@@ -4,9 +4,24 @@ import Footer from '../components/Footer'
 import CustomThemeProvider from '../contexts/CustomThemeProvider'
 import styled from 'styled-components'
 import Head from 'next/head'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 function MyApp({ Component, pageProps }) {
   return (
     <>
+      <ToastContainer 
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Head>
         <title>MyGas</title>
         <link rel="icon" href="/favicon.ico" />

@@ -12,6 +12,7 @@
     "next": "9.5.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-toastify": "^6.0.9",
     "styled-components": "^5.2.0",
     "use-wallet": "^0.8.0",
     "wallet-address-validator": "^0.2.4",
