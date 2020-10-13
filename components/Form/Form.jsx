@@ -1,14 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function Form({value, onChange, onSubmit}) {
+function Form({value, onChange, onSubmit, disabled}) {
   return (
     <StyledForm>
       <StyledInput placeholder={'Enter a Ethereum address'} 
         value={value}
         onChange={onChange}
       />
-      <StyledButton onClick={onSubmit}>Let's go</StyledButton>
+      <StyledButton 
+        onClick={onSubmit}
+        disabled={disabled}
+      >
+        Let's go
+      </StyledButton>
     </StyledForm>
   )
 }
@@ -40,6 +45,11 @@ const StyledButton = styled.button`
   border-radius: ${(props) => props.theme.border.radius}px;
   color: ${(props) => props.theme.color.hightLight};
   cursor: pointer;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 `
 
 export default Form

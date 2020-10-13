@@ -5,6 +5,8 @@ import Cards from '../components/Cards'
 import Web3 from 'web3'
 import { getTransactions, getEtherUSD } from '../services/etherscan.service'
 import BigNumber from 'bignumber.js'
+import { validate }  from 'wallet-address-validator'
+
 
 const ONE_DAY_TIME_STAMP = (new Date() / 1000) - (24 * 60 * 60)
 
@@ -22,14 +24,11 @@ export default function Home() {
     let totalGasFee = new BigNumber(0) // eth
     let dailyGasFee = new BigNumber(0)
 
-    console.log('REMOVEME ===== ONE_DAY_TIME_STAMP', ONE_DAY_TIME_STAMP)
-
     for (const transaction of transactions) {
       if (transaction.from.toUpperCase() === address.toUpperCase()) {
         const gasPrice = new BigNumber(transaction.gasPrice).dividedBy(new BigNumber(10).pow(18))
         const gasUsed = new BigNumber(transaction.gasUsed)
         const transactionFee = gasPrice.multipliedBy(gasUsed)
-
 
         if (transaction.timeStamp > ONE_DAY_TIME_STAMP) {
           dailyGasFee = dailyGasFee.plus(transactionFee)
@@ -42,9 +41,6 @@ export default function Home() {
     const { ethusd } = await getEtherUSD()
 
     totalGasFee = totalGasFee.multipliedBy(new BigNumber(ethusd))
-
-    console.log('dailyGasFee', dailyGasFee.toString())
-
 
     return {
       totalGasFee: '$' + totalGasFee.toFixed(3).toString(),
@@ -74,12 +70,16 @@ export default function Home() {
     }
   }
 
+  const isAddressValid = validate(address, 'ethereum')
+  console.log('REMOVEME ===== isAddressValid', isAddressValid)
+
   return (
     <PageContent>
       <Form 
         value={address}
         onChange={(e) => setAddress(e.target.value)}
         onSubmit={handleCountFees}
+        disabled={!isAddressValid}
       />
       <Cards 
         gasFees={gasFees}
