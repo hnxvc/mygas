@@ -7,7 +7,7 @@ function Footer() {
       <StyledCopyright>
         Copyright© 2020 <a href="https://github.com/hnxvc" target="_blank">Hnx</a>. All rights reserved.
       </StyledCopyright>
-      <StyledPower>Powered by Etherscan.io and CoinGecko APIs</StyledPower>
+      <StyledPower>Powered by Etherscan.io APIs</StyledPower>
     </StyledFooter>
   )
 }
