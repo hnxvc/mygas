@@ -6,21 +6,21 @@ const imageEth = '/img/eth.png'
 const imageClock = '/img/clock.png'
 const imagePizza = '/img/pizza.png'
 
-function Cards() {
+function Cards({gasFees}) {
   return (
     <StyledCards>
       <Card 
-        number={'33223'}
+        number={gasFees.total}
         description={'Total Gas Fees'}
         icon={imageEth}
       />
       <Card 
-        number={'33223'}
+        number={gasFees.daily}
         description={'24H Gas Fees'}
         icon={imageClock}
       />
       <Card 
-        number={'33223'}
+        number={gasFees.pizza}
         description={'Can be used to buy these pizzas'}
         icon={imagePizza}
       />

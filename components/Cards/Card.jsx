@@ -18,6 +18,7 @@ const StyledCard = styled.div`
   background-color: ${props => props.theme.color.section};
   width: 32%;
   padding: 20px;
+  text-align: center;
 `
 
 const StyledNumber = styled.h2`

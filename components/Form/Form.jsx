@@ -1,11 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function Form() {
+function Form({value, onChange, onSubmit}) {
   return (
     <StyledForm>
-      <StyledInput placeholder={'Enter a Ethereum address'} />
-      <StyledButton>Let's go</StyledButton>
+      <StyledInput placeholder={'Enter a Ethereum address'} 
+        value={value}
+        onChange={onChange}
+      />
+      <StyledButton onClick={onSubmit}>Let's go</StyledButton>
     </StyledForm>
   )
 }
