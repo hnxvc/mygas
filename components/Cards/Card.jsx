@@ -31,7 +31,7 @@ const StyledCard = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
-    width: 32%;
+    width: 31%;
   }
 `
 
