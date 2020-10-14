@@ -10,7 +10,7 @@ function Card({number, eth, description, icon, decimals, prefix}) {
         <CountUp 
           end={Number(number)}
           decimals={decimals}
-          decimal=","
+          decimal="."
           prefix={prefix}
         />
       </StyledNumber>
