@@ -5,17 +5,28 @@ import { GA_TRACKING_ID } from '../lib/gtag'
 
 export default class CustomDocument extends Document {
   static async getInitialProps(ctx) {
-    const sheet = new ServerStyleSheet()
-    const originalRenderPage = ctx.renderPage
+    const sheet = new ServerStyleSheet();
+    const originalRenderPage = ctx.renderPage;
 
-    const initialProps = await Document.getInitialProps(ctx)
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: (App) => (props) =>
+            sheet.collectStyles(<App {...props} />),
+        });
 
-    // Check if in production
-    const isProduction = process.env.NODE_ENV === 'production'
-
-    return {
-      ...initialProps,
-      isProduction,
+      const initialProps = await Document.getInitialProps(ctx);
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
+        ),
+      };
+    } finally {
+      sheet.seal();
     }
   }
 
