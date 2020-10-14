@@ -14,10 +14,10 @@ function GasTracker() {
     fetchData()
     const x = setInterval(() => {
       fetchData()
-    }, 15000)
+    }, 60000)
 
     return () => clearInterval(x)
-  }, [fetchData])
+  }, [fetchData()])
 
   const { SafeGasPrice, ProposeGasPrice, FastGasPrice } = gasTracker
   return (
