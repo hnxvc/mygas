@@ -13,11 +13,15 @@ function Cards({gasFees}) {
         number={gasFees.total}
         description={'Total Gas Fees'}
         icon={imageEth}
+        decimals={3}
+        prefix={'$'}
       />
       <Card 
         number={gasFees.daily}
         description={'24H Gas Fees'}
         icon={imageClock}
+        prefix={'$'}
+        decimals={3}
       />
       <Card 
         number={gasFees.pizza}

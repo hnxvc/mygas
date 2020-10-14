@@ -18,6 +18,8 @@ export default function Home() {
     daily: 0,
     pizza: 0
   })
+
+  const [loading, setLoading] = useState(false)
   
   const handleGetTransactions = async (address, page) => {
     const transactions = await getTransactions(address, page)
@@ -48,8 +50,8 @@ export default function Home() {
       const { ethusd } = await getEtherUSD()
       totalGasFee = totalGasFee.multipliedBy(new BigNumber(ethusd))
       return {
-        totalGasFee: '$' + totalGasFee.toFixed(3).toString(),
-        dailyGasFee: '$' + dailyGasFee.toFixed(3).toString(),
+        totalGasFee: totalGasFee.toFixed(3).toString(),
+        dailyGasFee: dailyGasFee.toFixed(3).toString(),
         converToPizza: totalGasFee.dividedBy(new BigNumber(10)).toFixed(0).toString()
       }
     } catch (error) {
@@ -60,12 +62,13 @@ export default function Home() {
 
   const handleCountFees = async() => {
     if (!address) return 
+    setLoading(true)
 
     try {
       const transactions = await handleGetTransactions(address, 1)
 
       const { totalGasFee, dailyGasFee, converToPizza } = await getGasFees(transactions, address)
-
+      setLoading(false)
       setGasFees({
         total: totalGasFee,
         daily: dailyGasFee,
@@ -86,6 +89,7 @@ export default function Home() {
         onChange={(e) => setAddress(e.target.value)}
         onSubmit={handleCountFees}
         disabled={!isAddressValid}
+        loading={loading}
       />
       <Cards 
         gasFees={gasFees}

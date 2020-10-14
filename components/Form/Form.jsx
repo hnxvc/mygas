@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function Form({value, onChange, onSubmit, disabled}) {
+function Form({value, onChange, onSubmit, disabled, loading}) {
   return (
     <StyledForm>
       <StyledInput placeholder={'Enter a Ethereum address'} 
@@ -12,7 +12,7 @@ function Form({value, onChange, onSubmit, disabled}) {
         onClick={onSubmit}
         disabled={disabled}
       >
-        Let's go
+        { loading ? 'Loading ...' : 'Let\'s go'}
       </StyledButton>
     </StyledForm>
   )
