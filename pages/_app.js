@@ -44,7 +44,7 @@ const StyledApp = styled.section`
   font-family: monospace;
 
   a {
-    color: ${(props) => props.theme.color.text};
+    color: ${(props) => props.theme.color.hightLight};
 
     &:hover {
       color: ${(props) => props.theme.color.hightLight};

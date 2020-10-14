@@ -10,7 +10,7 @@ function Form({value, onChange, onSubmit, disabled, loading}) {
       />
       <StyledButton 
         onClick={onSubmit}
-        disabled={disabled}
+        disabled={disabled || loading}
       >
         { loading ? 'Loading ...' : 'Let\'s go'}
       </StyledButton>
@@ -29,7 +29,7 @@ const StyledInput = styled.input`
   border: 1px solid ${(props) => props.theme.color.hightLight};
   border-radius: ${(props) => props.theme.border.radius}px;
   width: 100%;
-  color: ${(props) => props.theme.color.section};
+  color: ${(props) => props.theme.color.hightLight};
   font-size: ${(props) => props.theme.font.size.big}px;
   padding: 15px 20px;
 `

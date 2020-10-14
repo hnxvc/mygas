@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import ThemeControl from '../ThemeControl'
 
 function Footer() {
   return (
     <StyledFooter>
+      <ThemeControl />
       <StyledCopyright>
         Copyright© 2020 <a href="https://github.com/hnxvc" target="_blank">Hnx</a>. All rights reserved.
       </StyledCopyright>

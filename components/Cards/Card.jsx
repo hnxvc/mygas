@@ -38,6 +38,12 @@ const StyledCard = styled.div`
     flex-direction: row;
     width: 31%;
   }
+
+  &:hover {
+    img {
+      transform: scale(1.1, 1.1)
+    }
+  }
 `
 
 const StyledMeta = styled.span`
@@ -59,6 +65,7 @@ const StyledIcon = styled.div`
   text-align: center;
   img {
     max-width: 150px;
+    transition: all .2s;
   }
 `
 
