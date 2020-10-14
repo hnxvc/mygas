@@ -6,7 +6,10 @@ import styled from 'styled-components'
 import Head from 'next/head'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import * as gtag from '../lib/gtag'
+import Router from 'next/router'
+// Notice how we track pageview when route is changed
+Router.events.on('routeChangeComplete', (url) => gtag.pageview(url))
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -22,17 +25,6 @@ function MyApp({ Component, pageProps }) {
         draggable
         pauseOnHover
       />
-      <Head>
-        <title>MyGas</title>
-        <link rel="icon" href="/favicon.ico" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180547819-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)}
-          gtag('js', new Date());
-          gtag('config', 'UA-180547819-1');
-        </script>
-      </Head>
       <CustomThemeProvider>
         <StyledApp>
           <Header />
