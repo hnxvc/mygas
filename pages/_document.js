@@ -36,7 +36,7 @@ export default class CustomDocument extends Document {
     return (
       <html lang="en">
         <Head>
-        <title>MyGas</title>
+        <title>MyGas | H n x</title>
         <link rel="icon" href="/favicon.ico" />
 
           {/* We only want to add the scripts if in production */}

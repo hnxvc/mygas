@@ -7,7 +7,6 @@ function GasTracker() {
 
   const fetchData = async () => {
     const result = await getCurrentGasWei()
-    console.log(result)
     setGasTracker(result) 
   }
 
