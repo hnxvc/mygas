@@ -14,6 +14,7 @@ export function getEtherUSD() {
   return axios.get(url).then(response => response.data.result)
 }
 
-export function getCurrentGasPrice() {
+export function getCurrentGasWei() {
   const url =`https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=${API_KEY}`
+  return axios.get(url).then(response => response.data.result)
 }

@@ -7,7 +7,6 @@ const imageClock = '/img/clock.png'
 const imagePizza = '/img/pizza.png'
 
 function Cards({gasFees}) {
-  console.log(gasFees)
   return (
     <StyledCards>
       <Card 

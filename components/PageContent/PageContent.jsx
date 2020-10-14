@@ -20,7 +20,7 @@ const StyledPage = styled.div`
 `
 const StyledPageTitle = styled.h1`
   font-size: 20px;
-  font-size: ${(props) => props.theme.font.size.heading};
+  font-size: ${(props) => props.theme.font.size.heading}px;
   text-align: center;
   span {
     color: ${(props) => props.theme.color.hightLight};

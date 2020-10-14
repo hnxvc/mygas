@@ -5,7 +5,8 @@ import Cards from '../components/Cards'
 import { getTransactions, getEtherUSD } from '../services/etherscan.service'
 import BigNumber from 'bignumber.js'
 import { validate }  from 'wallet-address-validator'
-import { toast } from 'react-toastify';
+import { toast } from 'react-toastify'
+import GasTracker from '../components/GasTracker'
 
 const ONE_DAY_TIME_STAMP = (new Date() / 1000) - (24 * 60 * 60)
 
@@ -106,6 +107,8 @@ export default function Home() {
       <Cards 
         gasFees={gasFees}
       />
+
+      <GasTracker />
     </PageContent>
   )
 }
