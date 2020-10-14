@@ -11,13 +11,14 @@ function GasTracker() {
   }
 
   useEffect(() => {
-    fetchData()
     const x = setInterval(() => {
       fetchData()
-    }, 60000)
+    }, 15000)
 
     return () => clearInterval(x)
-  }, [fetchData()])
+
+    fetchData()
+  }, [])
 
   const { SafeGasPrice, ProposeGasPrice, FastGasPrice } = gasTracker
   return (

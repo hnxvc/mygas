@@ -74,6 +74,13 @@ export default function Home() {
   const handleCountFees = async() => {
     if (!address) return 
     setLoading(true)
+    setGasFees({
+      totalUSD: 0,
+      totalETH: 0,
+      dailyUSD: 0,
+      dailyETH: 0,
+      pizza: 0
+    })
 
     try {
       const transactions = await handleGetTransactions(address, 1)
@@ -90,6 +97,7 @@ export default function Home() {
     } catch (error) {
       toast.error(error.message)
       console.error('ERROR count fees: ', error)
+      setLoading(false)
     }
   }
 
