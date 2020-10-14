@@ -16,7 +16,7 @@ function Card({number, eth, description, icon, decimals, prefix}) {
       </StyledNumber>
       <StyledMeta>
         {
-          eth ? '('+eth + ' eth)' : ''
+          eth ? '('+eth + ' eth)' : '---'
         }
       </StyledMeta>
       <StyledDescription>{description}</StyledDescription>
