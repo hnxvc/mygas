@@ -7,17 +7,20 @@ const imageClock = '/img/clock.png'
 const imagePizza = '/img/pizza.png'
 
 function Cards({gasFees}) {
+  console.log(gasFees)
   return (
     <StyledCards>
       <Card 
-        number={gasFees.total}
+        number={gasFees.totalUSD}
+        eth={gasFees.totalETH}
         description={'Total Gas Fees'}
         icon={imageEth}
         decimals={3}
         prefix={'$'}
       />
       <Card 
-        number={gasFees.daily}
+        number={gasFees.dailyUSD}
+        eth={gasFees.dailyETH}
         description={'24H Gas Fees'}
         icon={imageClock}
         prefix={'$'}

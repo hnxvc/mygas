@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import CountUp from 'react-countup'
 
 
-function Card({number, description, icon, decimals, prefix}) {
+function Card({number, eth, description, icon, decimals, prefix}) {
   return (
     <StyledCard>
       <StyledNumber>
@@ -14,6 +14,11 @@ function Card({number, description, icon, decimals, prefix}) {
           prefix={prefix}
         />
       </StyledNumber>
+      <StyledMeta>
+        {
+          eth ? '('+eth + ' eth)' : ''
+        }
+      </StyledMeta>
       <StyledDescription>{description}</StyledDescription>
       <StyledIcon>
         <img src={icon} alt="icon"/>
@@ -33,6 +38,11 @@ const StyledCard = styled.div`
     flex-direction: row;
     width: 31%;
   }
+`
+
+const StyledMeta = styled.span`
+  margin-top: 5px;
+  display: block;
 `
 
 const StyledNumber = styled.h2`

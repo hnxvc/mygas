@@ -13,7 +13,7 @@ function PageContent({ children }) {
 }
 
 const StyledPage = styled.div`
-  max-width: 960px;
+  max-width: 950px;
   margin: 0 auto;
   padding: 40px 25px 0;
   min-height: calc(100vh - 150px);
