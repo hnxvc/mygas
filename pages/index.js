@@ -19,6 +19,15 @@ export default function Home() {
     pizza: 0
   })
   
+  const handleGetTransactions = async (address, page) => {
+    const transactions = await getTransactions(address, page)
+    if (!transactions || transactions.length === 0) {
+      return []
+    }
+    ++page
+    return transactions.concat(await handleGetTransactions(address, page))
+  }
+
   const getGasFees = async (transactions, address) => {
     try {
       let totalGasFee = new BigNumber(0) // eth
@@ -53,7 +62,8 @@ export default function Home() {
     if (!address) return 
 
     try {
-      const transactions = await getTransactions(address)
+      const transactions = await handleGetTransactions(address, 1)
+
       const { totalGasFee, dailyGasFee, converToPizza } = await getGasFees(transactions, address)
 
       setGasFees({
