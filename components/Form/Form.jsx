@@ -35,16 +35,24 @@ const StyledInput = styled.input`
 `
 
 const StyledButton = styled.button`
-  position: absolute;
-  top: 28px;
-  right: 30px;
-  padding: 10px 15px;
+  padding: 15px 25px;
   font-size: 16px;
   border: none;
   background-color: ${(props) => props.theme.color.bg};
   border-radius: ${(props) => props.theme.border.radius}px;
   color: ${(props) => props.theme.color.hightLight};
   cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 28px;
+    right: 30px;
+    padding: 10px 15px;
+    width: auto;
+    margin-top: 0;
+  }
 
   &:disabled {
     opacity: 0.6;

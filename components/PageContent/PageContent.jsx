@@ -15,8 +15,7 @@ function PageContent({ children }) {
 const StyledPage = styled.div`
   max-width: 950px;
   margin: 0 auto;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 40px 25px 0;
   min-height: calc(100vh - 150px);
 `
 const StyledPageTitle = styled.h1`

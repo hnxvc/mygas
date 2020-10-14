@@ -36,6 +36,11 @@ const StyledCards = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `
 
 export default Cards

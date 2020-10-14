@@ -25,9 +25,14 @@ function Card({number, description, icon, decimals, prefix}) {
 const StyledCard = styled.div`
   border-radius: ${props => props.theme.border.radius}px;
   background-color: ${props => props.theme.color.section};
-  width: 32%;
   padding: 20px;
   text-align: center;
+  margin-bottom: 30px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    width: 32%;
+  }
 `
 
 const StyledNumber = styled.h2`

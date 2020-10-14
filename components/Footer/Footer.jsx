@@ -13,19 +13,28 @@ function Footer() {
 }
 
 const StyledFooter = styled.footer`
-  display: flex;
-  justify-content: space-between;
+  padding: 20px 25px;
   text-align: center;
-  padding-bottom: 20px;
-  padding-top: 20px;
+
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+  }
 `
 
 const StyledCopyright = styled.div`
-  flex-basis: 50%;
+  @media (min-width: 768px) {
+    flex-basis: 50%;
+  }
 `
 
 const StyledPower = styled.div`
-  flex-basis: 50%;
+margin-top: 20px;
+
+  @media (min-width: 768px) {
+    flex-basis: 50%;
+    margin-top: 0;
+  }
 `
 
 export default Footer
