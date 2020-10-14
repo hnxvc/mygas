@@ -12,6 +12,7 @@ function GasTracker() {
   }
 
   useEffect(() => {
+    fetchData()
     const x = setInterval(() => {
       fetchData()
     }, 15000)
