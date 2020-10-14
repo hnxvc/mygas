@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import CountUp from 'react-countup'
 
 
-function Card({number, eth, description, icon, decimals, prefix}) {
+function Card({number, eth, description, icon, decimals, prefix, preText}) {
   return (
     <StyledCard>
       <StyledNumber>
@@ -16,7 +16,10 @@ function Card({number, eth, description, icon, decimals, prefix}) {
       </StyledNumber>
       <StyledMeta>
         {
-          eth ? '('+eth + ' eth)' : '---'
+          eth ? '('+eth + ' eth)' : ''
+        }
+        {
+          !eth && preText
         }
       </StyledMeta>
       <StyledDescription>{description}</StyledDescription>

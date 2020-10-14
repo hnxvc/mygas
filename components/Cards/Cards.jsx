@@ -16,6 +16,7 @@ function Cards({gasFees}) {
         icon={imageEth}
         decimals={3}
         prefix={'$'}
+        preText={'---'}
       />
       <Card 
         number={gasFees.dailyUSD}
@@ -24,6 +25,7 @@ function Cards({gasFees}) {
         icon={imageClock}
         prefix={'$'}
         decimals={3}
+        preText={'---'}
       />
       <Card 
         number={gasFees.pizza}
